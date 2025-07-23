@@ -3,6 +3,7 @@ import csv
 import os
 import logging
 import time
+import random
 from datetime import datetime
 
 # Constants
@@ -348,7 +349,16 @@ def main():
                 if result["Raw Spur.US results"] == "N/A":
                     error_ips += 1
                 results_cache[ip] = result
-                time.sleep(2)
+
+                # Avoid API detection
+                wait = random.uniform(2.5, 7.5)  # Wait between 2.5 and 7.5 seconds
+                print(f"Sleeping for {wait:.2f} seconds to mimic human behavior...")
+                time.sleep(wait)
+                if idx % random.randint(8, 15) == 0:
+                    long_wait = random.uniform(15, 40)
+                    print(f"Taking a longer break for {long_wait:.2f} seconds...")
+                    time.sleep(long_wait)
+                    
             for ip in ips:
                 results.append(results_cache[ip])
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")

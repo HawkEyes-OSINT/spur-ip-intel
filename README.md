@@ -5,13 +5,19 @@ Designed for OSINT, forensics, and security investigations.
 
 ## Features
 
-- **Bulk IP lookup**: Manual entry or CSV upload (thousands of IPs supported)
+- **Bulk IP lookup**: Manual entry or CSV upload
 - **Deduplication**: Each unique IP is queried only once; results mapped to all input rows
 - **Session management**: Handles Spur/Clerk authentication, session expiry, and re-authentication
 - **Rate limit handling**: Exponential backoff and automatic pausing on 429 errors
 - **Detailed logging**: All actions and errors logged to `spur_osint.log`
 - **CSV output**: Results saved as new or extended CSV, including raw Spur JSON
 - **Terminal summary**: Prints summary of unique IPs, errors, and major issues at the end
+
+## Warning
+
+**Use this tool with caution.**  
+Your Spur.us account can be suspended if usage patterns appear automated or violate Spur's policies.  
+Always comply with Spur's terms of service and applicable local laws when using this tool.
 
 ## Requirements
 
@@ -195,4 +201,3 @@ MIT License
 ## Author
 
 HawkEyes OSINT Tools and Services
-https://hawk-eyes.io
